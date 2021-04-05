@@ -1,0 +1,16 @@
+NAME="Sangoma Linux"
+VERSION="7 (Core)"
+ID="sangoma"
+ID_LIKE="centos rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="Sangoma Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:sangoma:sng:7::server:utf8"
+HOME_URL="https://distro.sangoma.net/"
+BUG_REPORT_URL="https://issues.sangoma.net/"
+
+CENTOS_MANTISBT_PROJECT="Sangoma-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="sangoma"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+

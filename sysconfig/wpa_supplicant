@@ -1,0 +1,3 @@
+INTERFACES="-iwlan0"
+DRIVERS="-Dnl80211,wext"
+OTHER_ARGS="-u -f /var/log/wpa_supplicant.log -P /var/run/wpa_supplicant.pid"

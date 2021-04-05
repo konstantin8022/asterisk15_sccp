@@ -1,0 +1,2 @@
+/var/spool/asterisk/incron IN_CLOSE_WRITE /usr/bin/sysadmin_manager $#
+

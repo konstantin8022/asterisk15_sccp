@@ -1,0 +1,22 @@
+# Sangoma base configuration for iptables service. 
+#
+# Release 3 - 2018-01-30
+#
+# This file will AUTOMATICALLY be upgraded with newer releases
+# of sangoma-pbx. The default RHEL7 iptables firwall is saved in
+# the current directory as 'iptables.default'. Note that this is
+# NOT SUITABLE for a SIP Phone system, and will be disabled as
+# part of PBX Startup and Shutdown.
+#
+# If you wish to change this file and ensure that it's not over-
+# written, change the next line to say '# AUTOUPDATE-BLOCK'
+# instead of '# AUTOUPDATE-OK'.  
+#
+# AUTOUPDATE-OK
+#
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+COMMIT

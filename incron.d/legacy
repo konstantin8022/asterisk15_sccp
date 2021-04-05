@@ -1,0 +1,14 @@
+#/var/spool/asterisk/sysadmin/vpnstop IN_CLOSE_WRITE /etc/init.d/openvpn stop
+#/var/spool/asterisk/sysadmin/vpnstart IN_CLOSE_WRITE /usr/sbin/sysadmin_openvpn
+/var/spool/asterisk/sysadmin/vpnget IN_CLOSE_WRITE /usr/sbin/sysadmin_openvpn -d
+/var/spool/asterisk/sysadmin/intrusion_detection_stop IN_CLOSE_WRITE /etc/init.d/fail2ban stop
+#/var/spool/asterisk/sysadmin/update_system IN_CLOSE_WRITE /usr/sbin/sysadmin_update_system -a
+/var/spool/asterisk/sysadmin/update_system_cron IN_CLOSE_WRITE /usr/sbin/sysadmin_update_set_cron
+/var/spool/asterisk/sysadmin/portmgmt_setup IN_CLOSE_WRITE /usr/sbin/sysadmin_portmgmt
+#/var/spool/asterisk/sysadmin/amportal_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_amportal_restart
+/var/spool/asterisk/sysadmin/wanrouter_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_wanrouter_restart
+/var/spool/asterisk/sysadmin/dahdi_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_dahdi_restart
+#/var/spool/asterisk/sysadmin/incron_restart IN_CLOSE_WRITE /etc/init.d/incrond restart
+#/var/spool/asterisk/sysadmin/update_sysadmin_rpm IN_CLOSE_WRITE yum -y update sysadmin
+/usr/local/asterisk/ha_trigger IN_CLOSE_WRITE /usr/sbin/sysadmin_ha
+#/var/spool/asterisk/sysadmin/xmpppresence_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_xmpppresence_restart

@@ -1,0 +1,43 @@
+# Sangoma base configuration for ip6tables service. 
+#
+# Release 2 - 2016-09-16
+#
+# This file will AUTOMATICALLY be upgraded with newer releases
+# of sangoma-pbx. The default RHEL7 iptables firwall is saved in
+# the current directory as 'iptables.default'. Note that this is
+# NOT SUITABLE for a SIP Phone system, and will be disabled as
+# part of PBX Startup and Shutdown.
+#
+# If you wish to change this file and ensure that it's not over-
+# written, change the next line to say '# AUTOUPDATE-BLOCK'
+# instead of '# AUTOUPDATE-OK'.  
+#
+# AUTOUPDATE-OK
+#
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# RTP Traffic - This is second in the chain as it will be the most common,
+# or second most common, on a PBX.
+-A INPUT -p udp --dport 10000:20000 -j ACCEPT
+
+# Generic rules
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p ipv6-icmp -j ACCEPT
+
+# TCP: Standard Web and SIP ports
+-A INPUT -p tcp -m multiport --dports 22,80,443,5060,5061 -j ACCEPT
+
+# UDP: TFTP, DNS and SIP
+-A INPUT -p udp -m multiport --dports 69,53,5060,5061 -j ACCEPT
+
+# IPv6 Autoconf. Do not use DHCP, use SLAAC.
+-A INPUT -d fe80::/64 -p udp -m udp --dport 546 -m state --state NEW -j ACCEPT
+
+# Deny everything else.
+-A INPUT -j REJECT --reject-with icmp6-adm-prohibited
+-A FORWARD -j REJECT --reject-with icmp6-adm-prohibited
+COMMIT

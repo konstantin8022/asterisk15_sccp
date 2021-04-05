@@ -1,0 +1,18 @@
+# Sangoma PNPD Service (systemd)
+#
+# Copyright (c) 2018, Sangoma Technologies Corporation
+# This file is managed by the FreePBX 'sysadmin' Module.
+#
+
+[Unit]
+Description=Sangoma PnP Service
+After=mariadb.service
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/pnp_server
+User=asterisk
+
+[Install]
+WantedBy=default.target

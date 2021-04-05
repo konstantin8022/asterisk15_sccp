@@ -1,0 +1,38 @@
+/var/log/asterisk/queue_log {
+	daily
+	missingok
+	rotate 30
+	notifempty
+	sharedscripts
+	create 0640 asterisk asterisk
+	su asterisk asterisk
+}
+
+/var/spool/mail/asterisk {
+	daily
+	missingok
+	rotate 7
+	notifempty
+	sharedscripts
+	create 0660 asterisk mail
+	su asterisk mail 
+}
+
+/var/log/asterisk/messages
+/var/log/asterisk/event_log
+/var/log/asterisk/full
+/var/log/asterisk/dtmf
+/var/log/asterisk/fail2ban {
+	daily
+	missingok
+	rotate 7
+	notifempty
+	sharedscripts
+	create 0640 asterisk asterisk
+	su asterisk asterisk
+	postrotate
+    		/usr/sbin/asterisk -rx 'logger reload' > /dev/null 2> /dev/null
+	endscript
+}
+#This comment is to fix rpm file replacing
+#Config file built on Sun Jan  7 23:29:41 UTC 2018

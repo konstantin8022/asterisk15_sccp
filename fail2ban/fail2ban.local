@@ -1,0 +1,7 @@
+# Fail2Ban configuration file
+#
+# This file is Generated from your sysadmin module on your PBX
+# DO NOT HAND EDIT THIS FILE
+
+[Definition]
+logtarget = /var/log/fail2ban.log

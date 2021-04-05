@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Systemd shim for fail2ban running '/usr/sbin/systemctl $1 fail2ban'"
+/usr/bin/systemctl $1 fail2ban

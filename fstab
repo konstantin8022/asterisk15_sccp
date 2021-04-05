@@ -1,0 +1,12 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Tue Mar  9 12:39:29 2021
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/s7_freepbx-root /                       xfs     defaults        0 0
+UUID=0658b0c3-f214-4d85-a845-684c8b0c55ff /boot                   xfs     defaults        0 0
+/dev/mapper/s7_freepbx-home /home                   xfs     defaults        0 0
+/dev/mapper/s7_freepbx-swap swap                    swap    defaults        0 0

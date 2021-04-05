@@ -1,0 +1,9 @@
+# dist macros.
+
+%centos_ver 7
+%sangoma_ver 7
+%centos 7
+%sangoma 7
+%rhel 7
+%dist .el7.sangoma
+%el7 1

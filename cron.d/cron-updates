@@ -1,0 +1,6 @@
+# This runs the update check every night at midnight. It sleeps for up to an hour
+# as a random delay.
+#
+# This file was installed by the 'sangoma-pbx' package.
+#
+0 0 * * * root [ -e /etc/profile.d/z001-updates.sh ] && /etc/profile.d/z001-updates.sh update

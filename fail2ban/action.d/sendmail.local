@@ -1,0 +1,27 @@
+# Fail2Ban configuration file
+#
+# Author: Cyril Jaquier
+#
+# $Revision$
+#
+
+[Definition]
+actionstart = 
+actionstop = 
+actioncheck = 
+actionban = printf %%b "Subject: [Fail2Ban] <name>: banned <ip> on `hostname -f`
+            Date: `date -u +"%%a, %%d %%h %%Y %%T +0000"`
+            From: Fail2Ban <<sender>>
+            To: <dest>\n
+            Hi,\n
+            The IP <ip> has just been banned by Fail2Ban after
+            <failures> attempts against <name> on `hostname -f`.\n
+            Regards,\n
+            Fail2Ban" | /usr/sbin/sendmail -f <sender> <dest>
+actionunban = 
+
+[Init]
+name = default
+dest = root
+sender = fail2ban
+

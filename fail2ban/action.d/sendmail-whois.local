@@ -1,0 +1,28 @@
+# Fail2Ban configuration file
+#
+# This file is Generated from your sysadmin module on your PBX
+# DO NOT HAND EDIT THIS FILE
+
+
+[Definition]
+
+actionstart = 
+actionstop = 
+actioncheck = 
+actionban = printf %%b "Subject: [Fail2Ban] <name>: banned <ip>
+            From: Fail2Ban <<sender>>
+            To: <dest>\n
+            Hi,\n
+            The IP <ip> has just been banned by Fail2Ban after
+            <failures> attempts against <name>.\n\n
+            Here are more information about <ip>:\n
+            `/usr/bin/whois <ip>`\n
+            Regards,\n
+            Fail2Ban" | /usr/sbin/sendmail -f <sender> -t <dest>
+
+actionunban = 
+
+[Init]
+name = default
+dest = root
+sender = fail2ban
